@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Registers>
+
+  <!-- INIT - Overloads -->
+
+  <!-- INIT - Alarms -->
+
+  <!-- Set Ecoder alarms -->
+  <Register> <!-- OK -->
+    <Id>ECoderLeakDetectionCurrent</Id>
+    <Description>Leak Detection Current Alarm</Description>
+    <Type>bool</Type>
+    <Address>200</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>ECoderDaysOfLeak</Id>
+    <Description>Days of Leak Alarm</Description>
+    <Type>bool</Type>
+    <Address>200</Address>
+    <Size>2</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>ECoderDaysNoFlow</Id>
+    <Description>Days No Flow Alarm</Description>
+    <Type>bool</Type>
+    <Address>200</Address>
+    <Size>3</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>ECoderReverseFlow</Id>
+    <Description>Reverse Flow Alarm</Description>
+    <Type>bool</Type>
+    <Address>200</Address>
+    <Size>4</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+
+  <!-- END - Alarms -->
+
+  <Overload>
+    <Id>MtuStatus</Id>
+    <Description>Mtu Status</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>Shipbit</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <!-- Not Implemented
+  <Overload>
+    <Id>DailySnap</Id>
+    <Description>Mtu Daily Snap</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>DailyGMTHourRead</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  -->
+  <Overload>
+    <Id>ReadInterval</Id>
+    <Description>Read Interval</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>ReadIntervalMinutes</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>RSSIStatus</Id>
+    <Description>Dcu Packet RSSI in string format</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>RSSI</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>XmitInterval</Id>
+    <Description>Transmit Interval</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>MessageOverlapCount</Register>
+     <Register>ReadIntervalMinutes</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>PCBNumber</Id>
+    <Description>PCBNumber</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>PCBSupplierCode</Register>
+     <Register>PCBCoreNumber</Register>
+     <Register>PCBProductRevision</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>InstallConfirmationStatus</Id>
+    <Description>Installation Confirmation Status</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>InstallConfirmationNotSynced</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>MtuVoltageBattery</Id>
+    <Description>Mtu Voltage Battery</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>MtuMiliVoltageBattery</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>F12WAYRegister1</Id>
+    <Description>7021 reg1</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>F12WAYRegister1Int</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>F12WAYRegister10</Id>
+    <Description>7021 reg10</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>F12WAYRegister10Int</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>F12WAYRegister14</Id>
+    <Description>7021 reg14</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>F12WAYRegister14Int</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>Frequency1Way</Id>
+    <Description>1 Way channel Frequency</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>Frequency1WayHz</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>Frequency2WayTx</Id>
+    <Description>1 Way channel Transimision Frequency</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>Frequency2WayTxHz</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>Frequency2WayRx</Id>
+    <Description>1 Way channel Reception Frequency</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>Frequency2WayRxHz</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P1Status</Id>
+    <Description>Status of Port 1</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>P1StatusFlag</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P2Status</Id>
+    <Description>Status of Port 2</Description>
+    <Type>string</Type>
+    <Registers>
+     <Register>P2StatusFlag</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>MtuSoftVersion</Id>
+    <Description>Mtu software/firmware version</Description>
+    <Type>int</Type>
+    <Registers>
+     <Register>MtuSoftVersionLegacy</Register>
+     <Register>MtuSoftVersionNew</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>MtuSoftVersionString</Id>
+    <Description>Mtu software version</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>MtuSoftVersion</Register>
+      <Register>MtuSoftRevYear</Register>
+      <Register>MtuSoftRevMonth</Register>
+      <Register>MtuSoftBuildNumber</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P1ReadingError</Id>
+    <Description>P1 Encoder error message trying to read Meter</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P1ReadingErrorCode</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P2ReadingError</Id>
+    <Description>P1 Encoder error message trying to read Meter</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P2ReadingErrorCode</Register>
+    </Registers>
+    <CustomGet>method</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P1BackFlowState</Id>
+    <Description>P1 Backflow state</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P1EcoderFlowAlarms</Register>
+    </Registers>
+    <CustomGet>method:BackFlowState_Get</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P1DaysOfNoFlow</Id>
+    <Description>P1 Days of no flow</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P1EcoderFlowAlarms</Register>
+    </Registers>
+    <CustomGet>method:DaysOfNoFlow_Get</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P1LeakDetection</Id>
+    <Description>P1 Leak detection state</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P1EcoderLeakAlarms</Register>
+    </Registers>
+    <CustomGet>method:LeakDetection_Get</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P1DaysOfLeak</Id>
+    <Description>P1 Days of leak</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P1EcoderLeakAlarms</Register>
+    </Registers>
+    <CustomGet>method:DaysOfLeak_Get</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P2BackFlowState</Id>
+    <Description>P2 Backflow state</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P2EcoderFlowAlarms</Register>
+    </Registers>
+    <CustomGet>method:BackFlowState_Get</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P2DaysOfNoFlow</Id>
+    <Description>P2 Days of no flow</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P2EcoderFlowAlarms</Register>
+    </Registers>
+    <CustomGet>method:DaysOfNoFlow_Get</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P2LeakDetection</Id>
+    <Description>P2 Leak detection state</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P2EcoderLeakAlarms</Register>
+    </Registers>
+    <CustomGet>method:LeakDetection_Get</CustomGet>
+  </Overload>
+  <Overload>
+    <Id>P2DaysOfLeak</Id>
+    <Description>P2 Days of leak</Description>
+    <Type>string</Type>
+    <Registers>
+      <Register>P2EcoderLeakAlarms</Register>
+    </Registers>
+    <CustomGet>method:DaysOfLeak_Get</CustomGet>
+  </Overload>
+  
+  <!-- END - Overloads -->
+  
+  <!-- INIT - Registers -->
+
+  <!-- INIT - Alarms -->
+
+  <!-- Immediate + Urgent -->
+  <Register> <!-- OK -->
+    <Id>ImmediateAlarm</Id>
+    <Description>Set to transmit an immediate alarm</Description>
+    <Type>bool</Type>
+    <Address>42</Address>
+    <Size>2</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>UrgentAlarm</Id>
+    <Description>Set to generate an urgent alarm to dcu (force call to ncc)</Description>
+    <Type>bool</Type>
+    <Address>42</Address>
+    <Size>3</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+
+  <!-- Bits to reset ( zero/false ) -->
+  <Register> <!-- OK -->
+    <Id>AlarmMask1</Id>
+    <Description>Alarm mask first bit</Description>
+    <Type>bool</Type>
+    <Address>42</Address>
+    <Size>0</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>AlarmMask2</Id>
+    <Description>Alarm mask second bit</Description>
+    <Type>bool</Type>
+    <Address>42</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+
+  <!-- END - Alarms -->  
+
+  <!-- INIT - Encoders auto-detect Meters -->
+  
+  <!-- Autodetect flags -->
+  <Register> <!-- OK -->
+    <Id>P1EncoderAutodetect</Id>
+    <Description>Encoder auto-detection mode</Description>
+    <Type>bool</Type>
+    <Address>65</Address>
+    <Size>6</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2EncoderAutodetect</Id>
+    <Description>Encoder auto-detection mode</Description>
+    <Type>bool</Type>
+    <Address>65</Address>
+    <Size>7</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+
+  <!-- Protocol + LiveDigits -->
+  <!-- CoilCMD: 129 65 64 | 128 40 y 128 43 -->
+  <Register> <!-- ¿1 or 2 bytes? -->
+    <Id>P1EncoderProtocol</Id>
+    <Description>Encoder auto-detection protocol/encoder type</Description>
+    <Type>int</Type>
+    <Address>40</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P1EncoderLiveDigits</Id>
+    <Description>Encoder auto-detection livedigits. Range [0,995]</Description>
+    <Type>int</Type>
+    <Address>43</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- ¿1 or 2 bytes? -->
+    <Id>P2EncoderProtocol</Id>
+    <Description>Encoder auto-detection protocol/encoder type</Description>
+    <Type>int</Type>
+    <Address>56</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2EncoderLiveDigits</Id>
+    <Description>Encoder auto-detection livedigits. Range [0,995]</Description>
+    <Type>int</Type>
+    <Address>59</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  
+  <!-- Error -->
+  <Register> <!-- OK -->
+    <Id>P1ReadingErrorCode</Id>
+    <Description>P1 Encoder error code trying to read Meter</Description>
+    <Type>int</Type>
+    <Address>72</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2ReadingErrorCode</Id>
+    <Description>P2 Encoder error code trying to read Meter</Description>
+    <Type>int</Type>
+    <Address>112</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  
+  <!-- END - Encoders auto-detect Meters -->
+  
+  <!-- INIT - Registers -->
+  
+  <Register> <!-- OK -->
+    <Id>MtuType</Id>
+    <Description>MTU Type</Description>
+    <Type>int</Type>
+    <Address>0</Address>
+    <Size>1</Size>
+    <Write>false</Write> <!-- Use CoilCMD to simulate other MTUs -->
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuSoftVersionLegacy</Id>
+    <Description>MTU software version for legacy handheld tools</Description>
+    <Type>int</Type>
+    <Address>1</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuSerialNumber</Id>
+    <Description>MTU Id</Description>
+    <Type>int</Type>
+    <Address>6</Address>
+    <Size>4</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>Frequency1WayHz</Id>
+    <Description>One way tx frequency</Description>
+    <Type>int</Type>
+    <Address>10</Address>
+    <Size>4</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>Frequency2WayTxHz</Id>
+    <Description>Two way tx frequency</Description>
+    <Type>int</Type>
+    <Address>14</Address>
+    <Size>4</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>Frequency2WayRxHz</Id>
+    <Description>Two way rx frequency</Description>
+    <Type>int</Type>
+    <Address>18</Address>
+    <Size>4</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>Shipbit</Id>
+    <Description>System flags - Shipbit</Description>
+    <Type>bool</Type>
+    <Address>22</Address>
+    <Size>0</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MessageOverlapCount</Id>
+    <Description>P1 Number of new readings to take before transmit. Digits range [1-12]</Description>
+    <Type>int</Type>
+    <Address>25</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>ReadIntervalMinutes</Id>
+    <Description>Read interval in minutes. 0 invalid, 1-14 test, 5+ valid values</Description>
+    <Type>int</Type>
+    <Address>26</Address>
+    <Size>2</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet>method</CustomSet>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P1StatusFlag</Id>
+    <Description>Port 1 status</Description>
+    <Type>bool</Type>
+    <Address>28</Address>
+    <Size>0</Size>
+    <Write>false</Write>
+    <CustomGet/>
+	  <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2StatusFlag</Id>
+    <Description>Port 2 status</Description>
+    <Type>bool</Type>
+    <Address>28</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+	  <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>TimeToSyncHr</Id>
+    <Description>Time of day to listen for Time Sync - Hour</Description>
+    <Type>int</Type>
+    <Address>29</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>TimeToSyncMin</Id>
+    <Description>Time of day to listen for Time Sync - Minute</Description>
+    <Type>int</Type>
+    <Address>30</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>TimeToSyncSec</Id>
+    <Description>Time of day to listen for Time Sync - Seconds - Should be set to 30</Description>
+    <Type>int</Type>
+    <Address>31</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P1MeterType</Id>
+    <Description>P1 meter Type</Description>
+    <Type>int</Type>
+    <Address>32</Address>
+    <Size>2</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P1MeterId</Id>
+    <Description>P1 meter ID</Description>
+    <Type>ulong</Type>
+    <Address>34</Address>
+    <Size>6</Size>
+    <Write>true</Write>
+    <CustomGet>method:BcdToULong</CustomGet>
+    <CustomSet>method:ULongToBcd</CustomSet>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>RxInterval</Id>
+    <Description>Number of TX between RX</Description>
+    <Type>int</Type>
+    <Address>45</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2MeterType</Id>
+    <Description>P2 meter Type</Description>
+    <Type>int</Type>
+    <Address>48</Address>
+    <Size>2</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2MeterId</Id>
+    <Description>P2 meter Id</Description>
+    <Type>ulong</Type>
+    <Address>50</Address>
+    <Size>6</Size>
+    <Write>true</Write>
+    <CustomGet>method:BcdToULong</CustomGet>
+    <CustomSet>method:ULongToBcd</CustomSet>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2MessageOverlapCount</Id>
+    <Description>P2 Number of new readings to take before transmit. Digits range [1-12]</Description>
+    <Type>int</Type>
+    <Address>61</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>ReadMeter</Id>
+    <Description>Set to read meter (capture pulse count) if attached</Description>
+    <Type>bool</Type>
+    <Address>64</Address>
+    <Size>0</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>InstallConfirmationRequest</Id>
+    <Description>Set this flag to request a time sync</Description>
+    <Type>bool</Type>
+    <Address>65</Address>
+    <Size>2</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>DcuId</Id>
+    <Description>MTU/DCU ID of last packet received</Description>
+    <Type>int</Type>
+    <Address>92</Address>
+    <Size>4</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P1MeterReading</Id>
+    <Description>P1 Reading</Description>
+    <Type>ulong</Type>
+    <Address>96</Address>
+    <Size>6</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P1EcoderFlowAlarms</Id>
+    <Description>Port 1 Flow State Record</Description>
+    <Type>int</Type>
+    <Address>102</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P1EcoderLeakAlarms</Id>
+    <Description>Port 1 Leak State Record</Description>
+    <Type>int</Type>
+    <Address>103</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2MeterReading</Id>
+    <Description>P2 Meter Reading</Description>
+    <Type>ulong</Type>
+    <Address>104</Address>
+    <Size>6</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2EcoderFlowAlarms</Id>
+    <Description>Port 2 Flow State Record</Description>
+    <Type>int</Type>
+    <Address>110</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>P2EcoderLeakAlarms</Id>
+    <Description>Port 2 Leak State Record</Description>
+    <Type>int</Type>
+    <Address>111</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuMiliVoltageBattery</Id>
+    <Description>battery voltage (AD value) | battery volt = ADvalue * 9.766mV*2 + 250</Description>
+    <Type>int</Type>
+    <Address>113</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet>(_val_ * 9.766 * 2) + 250</CustomGet>
+	  <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>InstallConfirmationNotSynced</Id>
+    <Description>Installation Confirmation not synced with DCU flag</Description>
+    <Type>bool</Type>
+    <Address>116</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>RSSI</Id>
+    <Description>RSSI of last received packet</Description>
+    <Type>int</Type>
+    <Address>120</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet>(_val_ / 2) - 130</CustomGet>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>F12WAYRegister1Int</Id>
+    <Description>7021 register 1 integer</Description>
+    <Type>int</Type>
+    <Address>132</Address>
+    <Size>4</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet>method:HexToInt</CustomSet>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>F12WAYRegister10Int</Id>
+    <Description>7021 register 10 Integer</Description>
+    <Type>int</Type>
+    <Address>168</Address>
+    <Size>4</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet>method:HexToInt</CustomSet>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>F12WAYRegister14Int</Id>
+    <Description>7021 register 14 Integer</Description>
+    <Type>int</Type>
+    <Address>184</Address>
+    <Size>4</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet>method:HexToInt</CustomSet>
+  </Register>
+  <!-- Not Implemented
+  <Register>
+    <Id>DailyGMTHourRead</Id>
+    <Description>Indicates the hour of the daily read (network time). Range [0,23]</Description>
+    <Type>int</Type>
+    <Address>198</Address>
+    <Size>1</Size>
+    <Write>true</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  -->
+  <Register> <!-- OK -->
+    <Id>PCBSupplierCode</Id>
+    <Description>PCB Number Supplier Code. Range ASCII [65,90]</Description>
+    <Type>int</Type>
+    <Address>232</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>PCBCoreNumber</Id>
+    <Description>PCB Serial Number</Description>
+    <Type>int</Type>
+    <Address>233</Address>
+    <Size>4</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>PCBProductRevision</Id>
+    <Description>PCB Product Revision Number</Description>
+    <Type>int</Type>
+    <Address>237</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuSoftBuildNumber</Id>
+    <Description>MTU software Build Number</Description>
+    <Type>int</Type>
+    <Address>240</Address>
+    <Size>2</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuSoftVersionNew</Id>
+    <Description>MTU software version</Description>
+    <Type>int</Type>
+    <Address>244</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuSoftRevYear</Id>
+    <Description>MTU software revision year</Description>
+    <Type>int</Type>
+    <Address>245</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuSoftRevMonth</Id>
+    <Description>MTU software revision month</Description>
+    <Type>int</Type>
+    <Address>246</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+  <Register> <!-- OK -->
+    <Id>MtuSoftRevDay</Id>
+    <Description>MTU software revision day</Description>
+    <Type>int</Type>
+    <Address>247</Address>
+    <Size>1</Size>
+    <Write>false</Write>
+    <CustomGet/>
+    <CustomSet/>
+  </Register>
+
+  <!-- END - Registers -->
+  
+</Registers>
